@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'SUIT-Bold';
+    src: url(./font/SUIT-otf/SUIT-Bold.otf);
+}
+@font-face {
+    font-family: 'SUIT-Semi-Bold';
+    src: url(./font/SUIT-otf/SUIT-SemiBold.otf);
+}
+@font-face {
+    font-family: 'DIGITAL_Text';
+    src: url(./font/ds_digital/DS-DIGIB.TTF);
+}

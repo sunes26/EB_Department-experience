@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/result.css" />
+    <link rel="stylesheet" href="../styles/font.css" />
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="safe_box">
+        <img src="../img/money.png" id="result_ending">
+      <div class="safe_door">
+        <div class="safe_border">
+          <div class="safe_handle">
+            <img src="../img/handle.png"id="handle" />
+          </div>
+
+          <div class="safe_number_pad">
+            <div class="number_pad">
+              <input
+                type="text"
+                class="num_input_box"
+                id="num_input"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                placeholder="비밀번호를 입력하세요"
+              />
+
+              <div class="num_list">
+                <button class="num_btn">1</button>
+                <button class="num_btn">2</button>
+                <button class="num_btn">3</button>
+              </div>
+
+              <div class="num_list">
+                <button class="num_btn">4</button>
+                <button class="num_btn">5</button>
+                <button class="num_btn">6</button>
+              </div>
+
+              <div class="num_list">
+                <button class="num_btn">7</button>
+                <button class="num_btn">8</button>
+                <button class="num_btn">9</button>
+              </div>
+
+              <div class="num_list">
+                <button class="num_btn" style="font-size: 25px; color:#ED0A80;">초기화</button>
+                <button class="num_btn">0</button>
+                <button class="num_btn" style="font-size: 25px;color:#ED0A80">확인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../javascript/result.js"></script>
+  </body>
+</html>
