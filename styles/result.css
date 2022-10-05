@@ -130,7 +130,7 @@ body {
     font-family: 'DIGITAL_Text';
 }
 #num_input::placeholder{
-
+    letter-spacing:0;
     text-align: center;
     color: white;
     font-size: 30px;
