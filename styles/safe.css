@@ -38,6 +38,7 @@ body,
 html {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 
 }
 #set_bcolor{
@@ -138,7 +139,7 @@ h1 {
 }
 #submit_section button {
   position: absolute;
-  bottom: 170px;
+  bottom: 180px;
   width: 120px;
   border-radius: 10px;
   height: 60px;
@@ -306,7 +307,7 @@ button{
   font-family: "SUIT-Bold";
   font-size: 17px;
   margin-bottom: 30px;
-  top: 370px;
+  top: 343px;
 }
 #open_pw p:nth-child(3){
   position: absolute;
