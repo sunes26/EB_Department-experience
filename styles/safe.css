@@ -1,0 +1,263 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(0);
+  }
+}
+
+@keyframes PW_fadeInUp {
+  0% {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+iframe{
+  width: 100%;
+  height: 100%;
+    outline: none;
+    border: none;
+    padding-bottom: 80px;
+   
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+
+}
+#set_bcolor{
+
+    z-index: -10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#main_section {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+  z-index: 100;
+
+}
+
+
+h1 {
+  font-family: "SUIT-Bold";
+  font-size: 17px;
+}
+#input_section h2 {
+  font-family: "SUIT-Bold";
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+#input_section {
+  margin-top: 30px;
+}
+#input_section input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+
+  padding-left: 10px;
+  font-family: "SUIT-Regular";
+  font-size: 15px;
+}
+#hint_section {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hint_section h3 {
+  font-family: "SUIT-Regular";
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+#hint_section p {
+  font-family: "SUIT-Regular";
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 20px;
+}
+#submit_section {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#submit_section button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: #d9d9d9;
+  font-family: "SUIT-Regular";
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.obj {
+  position: relative;
+  animation: fadeInUp 1s;
+}
+
+#box {
+  left: 10%;
+  position: absolute;
+  opacity: 0;
+  z-index: -20;
+  width: 50%;
+  min-width: 300px;
+  max-width: 400px;
+  height: 40%;
+  max-height: 400px;
+  top: 30%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#title h5{
+  position: absolute;
+  top: 80px;
+  font-size: 15px;
+}
+#title p{
+  position: absolute;
+  font-family: "SUIT-Regular";
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+#title button{
+  position: absolute;
+  bottom: 60px;
+  width: 100px;
+  height: 30px;
+  border: none;
+
+}
+#title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+button{
+  cursor: pointer;
+}
+#hint_btn{
+  cursor: pointer;
+}
+#hint_gif{
+  position: absolute;
+}
+
+#correct{ 
+  z-index: -100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+#wrong{ 
+  z-index: -100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+#wrong iframe{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+#correct iframe{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+.correct_move{
+  transition: all;
+  transition-duration: 1s;
+  margin-top: -90px;
+}
+#open_pw{
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#open_pw h2{
+  font-family: "SUIT-Bold";
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+#open_pw p:nth-child(2){
+  font-family: "SUIT-Bold";
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+#open_pw p:nth-child(3){
+  font-family: "SUIT-Bold";
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.open_pw_opacity{
+  opacity: 1 !important;
+  transition: all;
+  transition-duration: 1s;
+}
