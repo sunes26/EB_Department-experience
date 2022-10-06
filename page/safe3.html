@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/safe.css" />
+    <link rel="stylesheet" href="../styles/font.css" />
+    <title>문제 3</title>
+  </head>
+  <body>
+    <div id="box">
+      <div id="title">
+        <h5>힌트</h5>
+        <div></div>
+        <p>정기적으로 예입하여 만기에 목돈을<br>마련하려는 적립식 예금</p>
+        <button id="cancel_btn">확인</button>
+      </div>
+      <iframe src="" id="hint_gif"></iframe>
+    </div>
+    <div id="set_bcolor"></div>
+    <section id="main_section">
+      <h1>문제 3</h1>
+      <section id="input_section">
+        <h2>답안 입력</h2>
+        <!--답 입력 칸-->
+        <input type="text" id="input" placeholder="답을 입력하세요" />
+      </section>
+
+      <secction id="hint_section">
+        <h3 id="hint_btn">힌트 보기</h3>
+        <p>주의! 힌트를 사용하면 최종 시간에 20초씩 가산돼요.</p>
+      </secction>
+      <section id="submit_section">
+        <button id="submit_btn">확인</button>
+      </section>
+    </section>
+    <section id="correct">
+      <img src="../img/correct.gif" id="correct_image" />
+      <!-- <iframe
+        src="../img/correct.gif"
+        id="correct_image"
+        scrolling="no"
+        maginwidth="0"
+        marginheight="0"
+        frameborder="0"
+        style="width: 10%; height: 10%"
+      ></iframe> -->
+    </section>
+
+    <section id="wrong">
+      <img src="../img/wrong.gif" id="wrong_image" />
+      <!-- <iframe src="../img/wrong.gif" id="wrong_image"  scrolling="no" maginwidth="0" marginheight="0" frameborder="0"></iframe>-->
+    </section>
+
+    <section id="open_pw">
+      <h2>정답입니다!</h2>
+      <div>
+        <img src="../img/correct_line.png" id="line1">
+        <p>세 번째 금고 비밀번호</p>
+        <img src="../img/correct_line2.png" id="line2">
+      </div>
+      <p>2</p>
+    </section>
+    <script src="../javascript/safe3.js"></script>
+  </body>
+</html>
