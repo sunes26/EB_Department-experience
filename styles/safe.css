@@ -307,7 +307,7 @@ button{
   font-family: "SUIT-Bold";
   font-size: 17px;
   margin-bottom: 30px;
-  top: 343px;
+  top: 348px;
 }
 #open_pw p:nth-child(3){
   position: absolute;
@@ -315,7 +315,7 @@ button{
   font-weight: 900;
   font-size: 80px;
   margin-bottom: 30px;
-  top: 520px;
+  top: 420px;
 }
 .open_pw_opacity{
   opacity: 1 !important;
