@@ -110,6 +110,7 @@ h1 {
 
 }
 #hint_section {
+  margin-top: -50px;
   width: 100%;
   height: 300px;
   display: flex;
