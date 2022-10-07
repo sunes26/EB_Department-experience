@@ -12,6 +12,11 @@ const correct_image = document.getElementById("correct_image");
 const open_pw = document.getElementById("open_pw");
 const wrong = document.getElementById("wrong");
 const wrong_image = document.getElementById("wrong_image");
+
+
+$("#input").change(function(){
+   submit_btn.style.backgroundColor="#5D5FF6"
+})
 hint_btn.addEventListener("click", function () {
   box.style.opacity = "1";
   box.style.zIndex = "1000";
@@ -41,7 +46,7 @@ cancel_btn.addEventListener("click", function () {
 });
 
 submit_btn.addEventListener("click", function () {
-  if (input.value == "B") {
+  if (input.value == "B" || input.value=="b") {
     main_section.style.opacity = "0";
     correct.style.opacity = "1";
     correct.style.zIndex = "1000";
@@ -58,6 +63,7 @@ submit_btn.addEventListener("click", function () {
     main_section.style.opacity = "0";
     wrong.style.opacity = "1";
     wrong.style.zIndex = "1000";
+    input.value="";
     setTimeout(function () {
       // wrong_image.src = "";
       main_section.style.opacity = "1";
