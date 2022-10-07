@@ -141,7 +141,8 @@ h1 {
 }
 #submit_section button {
   position: absolute;
-  bottom: 110px;
+  /* bottom: 110px; */
+  bottom: 15%;
   width: 120px;
   border-radius: 10px;
   height: 60px;
