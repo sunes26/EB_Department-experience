@@ -12,6 +12,20 @@ const correct_image = document.getElementById("correct_image");
 const open_pw = document.getElementById("open_pw");
 const wrong = document.getElementById("wrong");
 const wrong_image = document.getElementById("wrong_image");
+
+
+$("#input").on("propertychange change paste input", function() {
+  submit_btn.style.backgroundColor="#5D5FF6"
+  submit_btn.style.color="white"
+  console.log(input.value)
+  if(input.value==""){
+      submit_btn.style.backgroundColor="#d9d9d9"
+      submit_btn.style.color="black"
+  }
+});
+
+
+
 hint_btn.addEventListener("click", function () {
   box.style.opacity = "1";
   box.style.zIndex = "1000";
@@ -41,7 +55,7 @@ cancel_btn.addEventListener("click", function () {
 });
 
 submit_btn.addEventListener("click", function () {
-  if (input.value == "5428000") {
+  if (input.value == "5428000") { //5,428,000
     main_section.style.opacity = "0";
     correct.style.opacity = "1";
     correct.style.zIndex = "1000";
