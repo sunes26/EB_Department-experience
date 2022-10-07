@@ -59,12 +59,11 @@ submit_btn.addEventListener("click", function () {
     wrong.style.opacity = "1";
     wrong.style.zIndex = "1000";
     setTimeout(function () {
-      wrong_image.src = "";
+      // wrong_image.src = "";
       main_section.style.opacity = "1";
       wrong.style.opacity = "0";
       wrong.style.zIndex = "-10";
-      wrong_image.style.width = "10px";
-      wrong_image.style.height = "10px";
+
     }, 1000);
   }
 });
