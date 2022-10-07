@@ -14,9 +14,15 @@ const wrong = document.getElementById("wrong");
 const wrong_image = document.getElementById("wrong_image");
 
 
-$("#input").change(function(){
+$("#input").on("propertychange change paste input", function() {
    submit_btn.style.backgroundColor="#5D5FF6"
-})
+   submit_btn.style.color="white"
+   console.log(input.value)
+   if(input.value==""){
+       submit_btn.style.backgroundColor="#d9d9d9"
+       submit_btn.style.color="black"
+   }
+});
 hint_btn.addEventListener("click", function () {
   box.style.opacity = "1";
   box.style.zIndex = "1000";
