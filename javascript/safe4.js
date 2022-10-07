@@ -41,7 +41,7 @@ cancel_btn.addEventListener("click", function () {
 });
 
 submit_btn.addEventListener("click", function () {
-  if (input.value == "5,428,000") {
+  if (input.value == "5428000") {
     main_section.style.opacity = "0";
     correct.style.opacity = "1";
     correct.style.zIndex = "1000";
@@ -59,12 +59,11 @@ submit_btn.addEventListener("click", function () {
     wrong.style.opacity = "1";
     wrong.style.zIndex = "1000";
     setTimeout(function () {
-      wrong_image.src = "";
+      // wrong_image.src = "";
       main_section.style.opacity = "1";
       wrong.style.opacity = "0";
       wrong.style.zIndex = "-10";
-      wrong_image.style.width = "10px";
-      wrong_image.style.height = "10px";
+
     }, 1000);
   }
 });
