@@ -1,20 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Effect</title>
     <link rel="stylesheet" href="../styles/result.css" />
     <link rel="stylesheet" href="../styles/font.css" />
-
+    <script src="https://tistory4.daumcdn.net/tistory/3134841/skin/images/confetti_v2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
 
-    <title>최종 암호</title>
 
-  </head>
-  <body>
-    <section class="safe_box">
-      <img src="../img/money.png" id="result_ending" />
+        .festival {
+
+            position: fixed;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+
+            background: transparent;
+        }
+        .festival > .firecracker {
+            font-size: 15px;
+
+            width:1em;
+            height:1em;
+
+            background: rgba(255, 255, 255, 0.5);
+
+            position: absolute;
+            
+            border-radius: 50%;
+
+            /* 8방향 그림자 */
+            box-shadow: 
+                0 0 0 0 #FCFFA6,
+                0 0 0 0 #C1FFD7,
+                0 0 0 0 #B5DEFF,
+                0 0 0 0 #CAB8FF,
+                0 0 0 0 #B5EAEA,
+                0 0 0 0 #EDF6E5,
+                0 0 0 0 #FFBCBC,    
+                0 0 0 0 #F38BA0
+                ;
+
+            transition-property: box-shadow;
+            transition-duration: 2s;
+            transition-timing-function: eaes-out;
+        }
+
+        .festival > .firecracker.boom {
+            background:rgba(0, 0, 0, 0);
+
+            /* 8방향 그림자 */
+            box-shadow: 
+                5em 0 1em 0 #FCFFA6,
+                -5em 0 1em 0 #B5DEFF,
+                0 5em 1em 0 #CAB8FF,
+                0 -5em 1em 0 #B5EAEA,
+                3.5em 3.5em 1em 0 #C1FFD7,
+                3.5em -3.5em 1em 0 #EDF6E5,
+                -3.5em 3.5em 1em 0 #FFBCBC,    
+                -3.5em -3.5em 1em 0 #F38BA0
+                ;
+        }
+
+        .happy-new-year {
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+
+            color: white;
+
+            font-family: 'Permanent Marker', cursive;
+            font-size: 120px;
+            white-space: nowrap;
+            text-align: center;
+
+            padding: 0.25em;
+
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+            -webkit-background-clip: text;
+
+            background-color: rgb(255,255,255);
+            background-image: linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(255,222,0,1) 50%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+            background-size: 500%;
+            background-position: 0 0;
+
+            animation: blingbling 2s ease-in-out infinite;
+        }
+
+        @keyframes blingbling {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 0;
+            }
+        }
+
+        /* 유리 효과 */
+        .happy-new-year::before {
+            content:"";
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+
+            box-shadow: inset 0 0 2000px rgba(255, 255, 255, 1);
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width:1000px){
+            .happy-new-year {
+                font-size: 75px;
+            }
+        }
+        @media screen and (max-width:640px){
+            .happy-new-year {
+                font-size: 50px;
+                white-space: pre-wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="safe_box" style="z-index: 100;">
+      
+        <img src="../img/money.png" id="result_ending" />
       <div class="safe_door">
         <div class="safe_border">
           <div class="safe_handle">
@@ -65,10 +187,70 @@
         </div>
       </div>
     </section>
+    <button onclick="refreshPage()" id="restart_btn">재시작</button>
+    <div class="festival" id="festivals" style="z-index:-10; opacity: 0;">
+
+    </div>
+ 
     <script src="../javascript/result.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        function refreshPage(){
+            window.location.reload();
+        } 
+        </script>
+           
+    <script>
+        const generateRandom = function(begin, end){
+            const max = Math.max(begin, end);
+            const min = Math.min(begin, end);
+            const range = max - min;
+            return Math.random() * range + min;
+        };
+        const generateRandomInteger = function(begin, end){
+            return parseInt(generateRandom(begin, end));
+        };
 
+        $(function(){
+            
+            setInterval(()=>{
 
-  </script>
-  </body>
+                //.firecracker 추가
+                const firecracker = $("<div>").addClass("firecracker");
+                
+                //초기 스타일 설정
+                firecracker.css("font-size", generateRandomInteger(5, 30)+"px")
+                                .css("left", generateRandomInteger(0, 100)+"%")
+                                .css("top", "110%");
+
+                $(".festival").append(firecracker);
+
+                //랜덤값 설정(애니메이션을 위해)
+                const top = generateRandomInteger(5, 95);
+                const left = generateRandomInteger(5, 95);
+                const duration = generateRandomInteger(1000, 4000);
+
+                //애니메이션 설정
+                firecracker.animate({
+                    top:top+"%",
+                    left:left+"%"
+                }, duration, ()=>{
+                    //폭발하는 모션을 위한 클래스 추가
+                    firecracker.addClass("boom");
+
+                    //폭발모션은 지속시간이 2초이므로 2.5초 후 태그 제거
+                    setTimeout(()=>{
+                        firecracker.remove();
+                    }, 2500);
+                });
+
+            }, 250);//delay를 조절하면 폭죽 발사 속도 조절 가능(빠를 수록 시스템에 무리감)
+
+        });
+        
+
+    </script>
+</body>
 </html>
