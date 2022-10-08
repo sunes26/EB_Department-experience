@@ -55,7 +55,7 @@ cancel_btn.addEventListener("click", function () {
 });
 
 submit_btn.addEventListener("click", function () {
-  if (input.value == "5428000") { //5,428,000
+  if (input.value == "3130400") { 
     main_section.style.opacity = "0";
     correct.style.opacity = "1";
     correct.style.zIndex = "1000";
