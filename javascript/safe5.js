@@ -55,7 +55,7 @@ cancel_btn.addEventListener("click", function () {
 });
 
 submit_btn.addEventListener("click", function () {
-  if (input.value == "269776") {//269,776
+  if (input.value == "270000") {//270,000
     main_section.style.opacity = "0";
     correct.style.opacity = "1";
     correct.style.zIndex = "1000";
